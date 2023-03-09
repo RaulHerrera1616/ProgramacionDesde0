@@ -1,0 +1,20 @@
+Algoritmo sin_titulo
+//Escribir un programa que calcule cuántos dígitos tiene un número entero positivo sin
+//convertirlo a cadena (pista: se puede hacer dividiendo varias veces entre 10). Nota:
+	//investigar la función trunc().	
+	definir num como real
+	definir cifra Como Entero
+	escribir "Escriba un numero"
+	leer num
+	cifra = 1
+	mientras num>9 Hacer
+		escribir num
+		num = num/10
+		escribir num
+		num = trunc (num)
+		escribir num
+		cifra = cifra + 1
+	FinMientras
+	escribir "Tiene " cifra " cifras"
+	
+FinAlgoritmo

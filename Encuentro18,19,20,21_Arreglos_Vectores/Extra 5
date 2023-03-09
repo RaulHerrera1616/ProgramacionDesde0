@@ -1,0 +1,54 @@
+Algoritmo sin_titulo
+	Definir vector, frase, letra como cadena 
+	Definir i, posicion, contDer, contizq Como Entero 
+	Dimension vector(20)
+	Escribir "Ingrese una frass"
+	Leer frase 
+	para i <- 0 Hasta 19 Hacer
+		vector(i)=Subcadena(frase,i,i) 
+	FinPara
+	Escribir "Ingrese un caracter y luego una posición dentro de vector" 
+	Leer letra, posicion 
+	Si vector(posicion) = " " o vector(posicion) = "" Entonces
+		vector(posicion) = letra
+		Para i <- 0 Hasta 19 Hacer
+			Escribir Sin Saltar vector(i)
+		FinPara
+	SiNo
+		Para i <- 1 Hasta 19 Hacer 
+			si posicion+i <= 19 y (vector(posicion+i) = " " o vector(posicion+i) = "") o posicion = 0 Entonces ///Para que entre una letra si todos los
+																								///caracteres estan ocupados está el ultimo condicional
+				
+				para i <- 19 hasta posicion+1 Con Paso -1 Hacer 
+					vector(i)= vector(i-1) 
+					
+				FinPara
+				
+				vector(posicion) = letra 
+				i=19
+			
+			sino 
+				Si posicion-i >= 0 y (vector(posicion-i) = " "  o vector(posicion-i) = "") o posicion = 19 Entonces
+					
+					Para i <- 0 Hasta posicion-1 Con Paso 1 
+						vector(i) = vector(i+1) 
+						
+					FinPara
+					vector(posicion) = letra  
+					i= 19 
+				
+			FinSi
+		FinSi
+		
+			
+		FinPara
+		
+		
+	
+	Para i <- 0 Hasta 19 Hacer ////Es para controlar. NO BORRAR
+		Escribir Sin Saltar vector(i)
+	FinPara
+	
+FinSi
+Escribir "" 
+FinAlgoritmo
